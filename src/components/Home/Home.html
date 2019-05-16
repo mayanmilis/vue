@@ -1,0 +1,13 @@
+
+<section class="home">
+  <h1>home Component</h1>
+  <button v-on:click.prevent="getProducts">get products</button>
+  <h2>Pigeons List:</h2>
+  <ul>
+    <li v-for="product in products">
+      <p>{{product.title}}</p>
+      <app-product v-bind:product="product"></app-product>
+    </li>
+  </ul>
+</section>
+
