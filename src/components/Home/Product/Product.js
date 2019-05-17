@@ -15,7 +15,7 @@ export default {
       max_price: '',
       variants: {},
       attributes: [],
-      amount: 1
+      quantity: 1
 
     }
   },
@@ -42,11 +42,11 @@ export default {
       console.log(this.variants)
     },
     addItem() {
-      this.amount +=1;
+      this.quantity +=1;
     },
     removeItem() {
-      if(this.amount > 1){
-        this.amount -=1;
+      if(this.quantity > 1){
+        this.quantity -=1;
       }else{
         return null;
       }    

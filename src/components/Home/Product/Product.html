@@ -1,29 +1,49 @@
 
 <section class="product">
-  <div>
-    <div>
-        <h1>{{title}}</h1>
-        <p>{{description}}</p>
+    <div class="images">
+          <div class="mainImage">
+
+          </div>
+          <div class="imagesList">
+              <ul>
+                  <li v-for="image in images">
+                    <img v-bind:src="imager(image.url)">
+                  </li>
+                </ul>
+          </div>
+      </div>
+      <div class="description">
+          <h1>{{title}}</h1>
+          <p>{{description}}</p>
+      </div>
+    <div class="cart">
+      <div class="cartContainer">
+          <div class="select">
+              <select 
+              v-for="attribute in attributes" 
+              <!-- v-model="variants[attribute.title]" -->
+              required>
+                  <option selected hidden>Choose {{attribute.title}}</option>
+                  <option v-for="label in attribute.labels">
+                    {{label.title}}
+                  </option>
+                </select>
+          </div>
+          <div class="quantity">
+            <div class="text">
+                <p>Quantity: </p>
+            </div>
+            <div class="counter">
+                <button v-on:click.prevent="removeItem">-</button>
+                <p>{{quantity}}</p>
+                <button v-on:click.prevent="addItem">+</button>
+            </div>
+          </div>
+          <div class="addToCart">
+              <button v-on:click="showVariants">Add to cart</button>
+          </div>
+      </div>
     </div>
-    <div>
-      <ul>
-        <li v-for="image in images">
-          <img v-bind:src="imager(image.url)">
-        </li>
-      </ul>
-    </div>
-    <div>
-      <select v-for="attribute in attributes" v-model="variants[attribute.title]">
-        <option selected disabled>{{attribute.title}}</option>
-        <option v-for="label in attribute.labels">
-          {{label.title}}
-        </option>
-      </select>
-    </div>
-    <button v-on:click="showVariants">showVariant</button>
-    <p>{{amount}}</p>
-    <button v-on:click.prevent="addItem">+</button>
-    <button v-on:click.prevent="removeItem">-</button>
-  </div>
+
 </section>
 

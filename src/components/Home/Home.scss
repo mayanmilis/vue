@@ -14,7 +14,8 @@
                     width: 250px;
                     height: 250px;
                     border: 1px solid black;
-                    align-items: center;
+                    display: flex;
+                    justify-content: center;
                     img{
                         border: 2px solid purple;
                         width: 80%;
@@ -22,8 +23,8 @@
                     }
                     .pContainer{
                         position: absolute;
+                        border: 1px solid red;
                         bottom: 0;
-                        left: 0;
                         width: 80%;
 
                         h3{
