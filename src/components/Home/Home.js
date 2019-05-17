@@ -1,4 +1,5 @@
-import Product from './Product/index'
+import Product from './Product/index';
+import { imager } from '../../shared';
 
 export default {
   name: 'home',
@@ -8,8 +9,11 @@ export default {
   props: [],
   data () {
     return {
-
+      imager
     }
+  },
+  created() {
+    this.getProducts();
   },
   computed: {
     products(){

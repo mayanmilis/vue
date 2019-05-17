@@ -1,12 +1,16 @@
 
 <section class="home">
-  <h1>home Component</h1>
-  <button v-on:click.prevent="getProducts">get products</button>
-  <h2>Pigeons List:</h2>
   <ul>
     <li v-for="product in products">
-      <p>{{product.title}}</p>
-      <app-product v-bind:product="product"></app-product>
+      <router-link v-bind:to="'product/' + product.id">
+        <div class="routerContainer">
+          <img v-bind:src="imager(product.images[0].url)">
+          <div class="pContainer">
+              <h3>{{product.title}}</h3>
+              <p>{{product.min_price}}-{{product.max_price}}</p>
+          </div>
+        </div>
+      </router-link>
     </li>
   </ul>
 </section>
