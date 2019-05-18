@@ -95,15 +95,16 @@ export default {
         }
       }
     },
-    print(){
-      console.log({
+    addToCart(){
+      let item = {
         id: this.variantId,
         title: this.title,
         image: this.mainImage,
         labels: this.variant,
         price: this.min_price,
         quantity: this.quantity
-      })
+      }
+      axios.post('http://localhost:5000/api/items', item);
     }
   }
 }

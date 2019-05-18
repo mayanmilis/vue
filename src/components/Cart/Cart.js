@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export default {
   name: 'cart',
   components: {},
@@ -14,6 +16,12 @@ export default {
 
   },
   methods: {
-
+    add(){
+      let value = {
+        "name": "Miki6777",
+        "key": "6"
+      }
+      axios.post('http://localhost:5000/api/items', value)
+    }
   }
 }
