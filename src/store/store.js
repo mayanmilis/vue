@@ -7,7 +7,8 @@ Vue.use(Vuex, axios);
 
 export const store = new Vuex.Store({
     state: {
-        products: []
+        products: [],
+        cart: []
     },
     mutations: {
         getProducts: (state, products) => {
@@ -24,6 +25,7 @@ export const store = new Vuex.Store({
                 .catch(error => {
                     console.log(error)
                 })           
-        }
+        },
+        
     }
 })
