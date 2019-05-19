@@ -2,7 +2,7 @@
 <section class="product">
     <div class="images">
           <div class="mainImage">
-
+            <img v-bind:src="imager(mainImage.url)">
           </div>
           <div class="imagesList">
               <ul>
@@ -21,10 +21,15 @@
           <div class="select">
               <select 
               v-for="attribute in attributes" 
-              <!-- v-model="variants[attribute.title]" -->
+              v-model="tempVariant[attribute.id]"
+              v-on:click="createVariant"
               required>
                   <option selected hidden>Choose {{attribute.title}}</option>
-                  <option v-for="label in attribute.labels">
+                  <option 
+                  v-for="label in attribute.labels"
+                  v-bind:value="label.id"
+                  v-on:click="mainImageFunction"
+                  >
                     {{label.title}}
                   </option>
                 </select>
@@ -40,7 +45,7 @@
             </div>
           </div>
           <div class="addToCart">
-              <button v-on:click="showVariants">Add to cart</button>
+              <button v-on:click="addToCart">add to cart</button>
           </div>
       </div>
     </div>

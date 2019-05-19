@@ -1,12 +1,13 @@
-.home {
-    display: flex;
-    justify-content: center;
+.app {
+    .header {
+        display: flex;
+        justify-content: center;
+    }
     ul {
         list-style: none;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        border: 2px solid red;
+        padding: 0;
         li{
             margin: 20px;
                 .routerContainer {
