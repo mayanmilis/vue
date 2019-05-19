@@ -1,3 +1,96 @@
 .cart {
+    border: 3px solid blue;
+    width: 800px;
+    .header{
+        border: 3px solid green;
+        width: 100%;
+    }
+    .body {
+        display: flex;
+        flex-direction: row;
+        border: 3px solid rgb(128, 0, 90);
+        width: 100%;
+        .table {
+            width: 75%;
+            table {
+                width: 100%;
+                border: 3px solid orange;
+                tr {
+                    display: flex;
+                    width: 100%;
+                    border: 3px solid red;
+                    .description {
+                        width: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .quantity {
+                        width: 25%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .price {
+                        width: 25%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
 
+            }
+
+        }
+        .summery {
+            width: 25%;
+            hr{
+             width: 90%;
+            }
+            .header {
+                display: flex;
+                justify-content: space-around;
+                span{
+                    font-size: 1.25em;
+                    font-weight: 700;
+                    align-items: center; 
+                }
+                div{
+                    display: flex;
+                    align-items: center; 
+                }
+            }
+            .body {
+                display: flex;
+                flex-direction: column;
+                .items {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                }
+                .total {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    font-weight: 700;
+
+                }
+                .checkout {
+                    display: flex;
+                    justify-content: center;
+                    button {
+                        width: 90%;
+                        height: 40px;
+                        box-shadow: 0px 1px 3px 0 rgba(7, 7, 8, 0.46);
+                        background-image: linear-gradient(to top, #31a893, #34ceb3);
+                        border: none;
+                        color: white;
+                        font-weight: 700;
+                    }
+                    
+                }
+            }
+
+        }
+    }
 }

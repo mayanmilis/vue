@@ -1,0 +1,35 @@
+<tr class="item">
+    <td id="description">
+      <div class="descriptionContainer">
+        <div class="image">
+          <img v-bind:src="imager(image.url)">
+        </div>
+        <div class="description">
+            <div class="text">
+                <span>{{title}}</span>
+                <span v-for="label in labels">
+                  {{convertId(label)}}
+                </span>
+            </div>
+            <div class="remove">
+              <p v-on:click="deleteItem">Remove</p>
+            </div>
+          </div>
+      </div>
+    </td>
+    <td id="quantity">
+      <div class="quantity">
+        <button v-on:click="removeItem">-</button>
+        <span>{{quantity}}</span>
+        <button v-on:click="addItem">+</button>
+      </div>
+    </td>
+    <td id="price">
+      <div class="price">
+        <span>$ {{price}}</span>
+      </div>
+    </td>
+</tr>
+
+
+

@@ -1,6 +1,56 @@
 
 <section class="cart">
-  <h1>cart Component</h1>
-  <button v-on:click="add">add</button>
+  <div class="header">
+      <h1>CART</h1>
+  </div>
+  <hr>
+  <div class="body">
+      <div class="table">
+          <table>
+            <tr>
+              <div class="description">
+                  <th>Product Description</th>
+              </div>
+              <div class="quantity">
+                  <th>Qty</th>
+              </div>
+              <div class="price">
+                  <th>Price</th>
+              </div>
+            </tr>
+            <hr>
+            <div>
+              <app-item 
+              v-for="item in cart"
+              v-bind:item="item"
+              v-bind:products="products"
+              ></app-item>
+            </div>
+          </table>
+      </div>
+      <div class="summery">
+          <div class="header">
+            <span>Summery</span>
+            <div>Clear all</div>
+          </div>
+          <hr>
+          <div class="body">
+            <div class="items">
+              <p>Items</p>
+              <p>{{items}}</p>
+            </div>
+            <hr>
+            <div class="total">
+              <p>Total</p>
+              <p>{{total}}</p>
+            </div>
+            <div class="checkout">
+              <button>Checkout</button>
+            </div>
+          </div>
+        </div>
+  </div>
+
+
 </section>
 
