@@ -29,4 +29,14 @@ router.delete('/:id', (req, res) => {
         .catch(err => res.status(404).json({ success: false}));
 });
 
+router.put('/:id', (req, res) => {
+    Item.findByIdAndUpdate({_id: req.params.id}, req.body)
+    .then(() =>{
+        Item.findOne({_id: req.params.id})
+        .then((item) => {
+            res.send(item)
+        })
+    })
+});
+
 module.exports = router;

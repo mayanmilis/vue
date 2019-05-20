@@ -1,6 +1,52 @@
 .home {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    .searchBox{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .search{
+            display: flex;
+            flex-direction: row;
+            height: 30px;
+            input{
+                width:200px;
+            }
+            button{
+                width:100px;
+                box-shadow: 0px 1px 3px 0 rgba(7, 7, 8, 0.46);
+                background-image: linear-gradient(to top, #31a893, #34ceb3);
+                border: none;
+                color: white;
+                
+            }
+        }
+        .priceRange{
+            display: flex;
+            flex-direction: row;
+            height: 30px;
+            input{
+                width:50px;
+                text-align: center;
+            }
+            button{
+                width: 100px;
+                box-shadow: 0px 1px 3px 0 rgba(7, 7, 8, 0.46);
+                background-image: linear-gradient(to top, #31a893, #34ceb3);
+                border: none;
+                color: white;
+            }
+            div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width:10%;
+                padding: 0;
+            }
+        }
+    }
+
     ul {
         list-style: none;
         display: flex;

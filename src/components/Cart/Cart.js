@@ -37,6 +37,12 @@ export default {
     },
     getProducts: function(){
       this.$store.dispatch('getProducts');
+    },
+    reRender: function(){
+      location.reload();
+    },
+    clear: function(){
+      this.$store.dispatch('clear', this.cart)
     }
   }
 }

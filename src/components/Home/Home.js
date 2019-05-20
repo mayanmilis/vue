@@ -9,7 +9,10 @@ export default {
   props: [],
   data () {
     return {
-      imager
+      imager,
+      input: '',
+      min: '',
+      max: ''
     }
   },
   created() {
@@ -27,6 +30,12 @@ export default {
   methods: {
     getProducts: function(){
       this.$store.dispatch('getProducts');
-    }
+    },
+    searchProducts: function(){
+      this.$store.dispatch('searchProducts', this.input);
+    },
+    priceRange: function(){
+      this.$store.dispatch('priceRange', {'min': this.min, 'max': this.max});
+    },
   }
 }

@@ -3,7 +3,7 @@ import { imager } from '../../../shared';
 export default {
   name: 'item',
   components: {},
-  props: ['item', 'products'],
+  props: ['item', 'products', 'reRender'],
   data () {
     return {
       id: this.item._id,
@@ -36,11 +36,17 @@ export default {
       console.log(this.id)
       let id = this.id;
       this.$store.dispatch('deleteItem', id);
+      this.reRender();
+    },
+    updateItem: function(){
+      console.log(this.id)
+      let id = this.id;
+      this.$store.dispatch('updateItem', {'id':id, 'quantity': this.quantity});
+      this.reRender();
     },
     convertId(label){
       console.log(label)
       let products = this.products;
-      let filteredLabel;
       for(let i = 0; i < products.length; i++){
         if(products[i].title === this.title){
           for(let j = 0; j < products[i].attributes.length; j++){
@@ -50,11 +56,8 @@ export default {
               return filtered[0].title;
             }
           }
-          // filteredAttribute = products[i].attributes.filter(item => item.id === label.attribute_id);
-          // filteredLabel = filteredAttribute.labels.filter(item => item.id ===label.label_id)
         }
       }
-      console.log(products)
     }
   }
 }

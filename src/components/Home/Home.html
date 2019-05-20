@@ -1,17 +1,33 @@
 
 <section class="home">
-  <ul>
-    <li v-for="product in products">
-      <router-link v-bind:to="'product/' + product.id">
-        <div class="routerContainer">
-          <img v-bind:src="imager(product.images[0].url)">
-          <div class="pContainer">
-              <h3>{{product.title}}</h3>
-              <p>{{product.min_price}}-{{product.max_price}}</p>
-          </div>
-        </div>
-      </router-link>
-    </li>
-  </ul>
+  <div class="searchBox">
+      <div class="search">
+          <input type="text" v-model="input" placeholder="Search products...">
+          <button v-on:click="searchProducts" >Search</button>
+      </div>
+      <div class="priceRange">
+          <input type="number" v-model="min" placeholder="min">
+          <div>-</div>
+          <input type="number" v-model="max" placeholder="max">
+          <button v-on:click="priceRange">Filter</button>
+      </div>
+  </div>
+  <div class="list">
+      <ul>
+          <li v-for="product in products">
+            <router-link v-bind:to="'product/' + product.id">
+              <div class="routerContainer">
+                <img v-bind:src="imager(product.images[0].url)">
+                <div class="pContainer">
+                    <h3>{{product.title}}</h3>
+                    <p v-if="product.min_price !== product.max_price">$ {{product.min_price}}-{{product.max_price}}</p>
+                    <p v-else>$ {{product.min_price}}</p>
+                </div>
+              </div>
+            </router-link>
+          </li>
+        </ul>
+  </div>
+
 </section>
 

@@ -19,9 +19,13 @@
     </td>
     <td id="quantity">
       <div class="quantity">
-        <button v-on:click="removeItem">-</button>
+        <div v-on:click="updateItem" class="button">
+            <button v-on:click="removeItem">-</button>
+        </div>
         <span>{{quantity}}</span>
-        <button v-on:click="addItem">+</button>
+        <div v-on:click="updateItem" class="button">
+            <button v-on:click="addItem">+</button>
+        </div>
       </div>
     </td>
     <td id="price">

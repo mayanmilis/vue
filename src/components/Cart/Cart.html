@@ -24,6 +24,7 @@
               v-for="item in cart"
               v-bind:item="item"
               v-bind:products="products"
+              v-bind:reRender="reRender"
               ></app-item>
             </div>
           </table>
@@ -31,7 +32,9 @@
       <div class="summery">
           <div class="header">
             <span>Summery</span>
-            <div>Clear all</div>
+            <div  v-on:click="reRender">
+                <div v-on:click="clear">Clear all</div>
+            </div>
           </div>
           <hr>
           <div class="body">
@@ -45,12 +48,12 @@
               <p>{{total}}</p>
             </div>
             <div class="checkout">
-              <button>Checkout</button>
+              <div v-on:click="reRender">
+                  <button v-on:click="clear">Checkout</button>
+              </div>
             </div>
           </div>
         </div>
   </div>
-
-
 </section>
 

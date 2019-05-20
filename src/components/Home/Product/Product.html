@@ -19,12 +19,13 @@
     <div class="cart">
       <div class="cartContainer">
           <div class="select">
+            <span v-for="attribute in attributes">
+              Select {{attribute.title}}
               <select 
-              v-for="attribute in attributes" 
               v-model="tempVariant[attribute.id]"
               v-on:click="createVariant"
               required>
-                  <option selected hidden>Choose {{attribute.title}}</option>
+                  <option selected hidden>Choose</option>
                   <option 
                   v-for="label in attribute.labels"
                   v-bind:value="label.id"
@@ -33,6 +34,8 @@
                     {{label.title}}
                   </option>
                 </select>
+            </span>
+
           </div>
           <div class="quantity">
             <div class="text">
@@ -45,7 +48,7 @@
             </div>
           </div>
           <div class="addToCart">
-              <button v-on:click="addToCart">add to cart</button>
+              <button v-on:click="addToCart">Add to cart</button>
           </div>
       </div>
     </div>
