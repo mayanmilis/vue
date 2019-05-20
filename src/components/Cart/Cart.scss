@@ -92,3 +92,18 @@
         }
     }
 }
+@media (max-width: 820px){
+    .cart {
+        width: 100%;
+        .body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .summery{
+                margin-top: 10px;
+                border: 1px solid rgb(185, 185, 185);
+                width:100%;
+            }
+        }
+    }
+} 
